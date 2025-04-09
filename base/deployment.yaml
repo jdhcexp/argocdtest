@@ -3,13 +3,17 @@ kind: Deployment
 metadata:
   name: wordpress
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
   template:
+    metadata:
+      labels:
+        app: wordpress
     spec:
       containers:
         - name: wordpress
           image: wordpress:latest
-          envFrom:
-            - configMapRef:
-                name: wordpress-config
-            - secretRef:
-                name: wordpress-secrets
+          ports:
+            - containerPort: 80
