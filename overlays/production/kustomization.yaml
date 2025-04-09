@@ -1,6 +1,7 @@
 # overlays/production/kustomization.yaml
 resources:
   - ../../base
+  - ingress.yaml
 patches:
   - path: patch-deployment.yaml
 secretGenerator:
