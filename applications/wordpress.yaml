@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: https://github.com/larepublica-co/argocd-test
+    repoURL: https://github.com/jdhcexp/argocdtest.git
     path: overlays/production
     targetRevision: main
   syncPolicy:
