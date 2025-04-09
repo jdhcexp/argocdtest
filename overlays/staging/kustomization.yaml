@@ -1,0 +1,11 @@
+# overlays/production/kustomization.yaml
+resources:
+  - ../../base
+  - ingress.yaml
+patches:
+  - path: patch-deployment.yaml
+secretGenerator:
+  - name: wordpress-secrets
+    behavior: merge
+    literals:
+      - WORDPRESS_AUTH_KEY==)f3.9B^ag(~e@+{KD<Cy49-YK{~q0X<#V&=!Ix4G2Sy3O!Xb>Yr1231wqe
